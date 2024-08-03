@@ -3,10 +3,6 @@ import SwiftUI
 struct TaskInDayView: View {
     @Binding var task: Task
 
-    @Binding var isDragging: Bool
-    @Binding var position: CGPoint
-    @Binding var offset: CGSize
-
     @State var isCompleted = false
 
     var body: some View {
@@ -34,22 +30,6 @@ struct TaskInDayView: View {
         .padding(.vertical, 10)
         .background(.white)
         .cornerRadius(8)
-        .gesture(
-            DragGesture()
-                .onChanged { value in
-                    withAnimation {
-                        isDragging = true
-                        position = value.startLocation
-                        offset = value.translation
-                    }
-                }
-                .onEnded { value in
-                    withAnimation {
-                        isDragging = false
-                        position = .zero
-                    }
-                }
-        )
     }
 }
 
@@ -59,11 +39,8 @@ struct TaskInDayView: View {
             .fill(.gray)
             .ignoresSafeArea()
         TaskInDayView(
-            task: .constant(.init(title: "title")),
-            isDragging: .constant(false), 
-            position: .constant(.zero),
-            offset: .constant(.zero)
+            task: .constant(.init(title: "title"))
         )
-            .padding()
+        .padding()
     }
 }

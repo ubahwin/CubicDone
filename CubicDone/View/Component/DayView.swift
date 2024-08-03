@@ -2,12 +2,11 @@ import SwiftUI
 import DequeModule
 
 struct DayView: View {
-    let dayIndex: Int
-    @Binding var days: Deque<Day>
+    @Binding var day: Day
 
-    @Binding var isDragging: Bool
-    @Binding var position: CGPoint
-    @Binding var offset: CGSize
+    @Binding var draggedTask: Task?
+    @Binding var draggedOffset: CGSize
+    @Binding var draggedPos: CGPoint
 
     var body: some View {
         Z {
@@ -17,22 +16,43 @@ struct DayView: View {
 
             V {
                 H {
-                    Text(days[dayIndex].date.formatted(Date.FormatStyle.custom))
+                    Text(day.date.formatted(Date.FormatStyle.custom))
                         .fontWeight(.semibold)
                         .padding()
 
                     Spacer()
                 }
 
-                ForEach($days[dayIndex].tasks) { task in
-                    TaskInDayView(
-                        task: task,
-                        isDragging: $isDragging,
-                        position: $position, 
-                        offset: $offset
-                    )
-                        .padding(.horizontal, 10)
-                        .padding(.bottom, 8)
+                ForEach($day.tasks) { task in
+                    GeometryReader { geometry in
+                        TaskInDayView(task: task)
+                            .padding(.horizontal, 10)
+                            .padding(.bottom, 8)
+                            .gesture(
+                                DragGesture()
+                                    .onChanged { value in
+                                        let additionUpOffset: CGFloat = 50
+                                        let taskPosition = geometry.frame(in: .global).origin
+
+                                        withAnimation {
+                                            draggedTask = task.wrappedValue
+                                            draggedOffset = value.translation
+                                            draggedPos = CGPoint(
+                                                x: taskPosition.x + value.startLocation.x,
+                                                y: taskPosition.y + value.startLocation.y - additionUpOffset
+                                            )
+                                        }
+                                    }
+                                    .onEnded { _ in
+                                        withAnimation {
+                                            draggedTask = nil
+                                            draggedOffset = .zero
+                                        }
+                                    }
+                            )
+                            .opacity(draggedTask == task.wrappedValue ? 0.1 : 1)
+                    }
+                    .frame(height: 60)
                 }
 
                 Spacer()
@@ -43,12 +63,12 @@ struct DayView: View {
 
 #Preview {
     DayView(
-        dayIndex: 0,
-        days: .constant(
-            [Day(date: Date(), tasks: [.init(title: "title"),.init(title: "title2")])]
+        day: .constant(.init(
+        date: Date(),
+        tasks: [.init(title: "title1"), .init(title: "title2")])
         ),
-        isDragging: .constant(false), 
-        position: .constant(.zero),
-        offset: .constant(.zero)
+        draggedTask: .constant(.init(title: "title")),
+        draggedOffset: .constant(.zero),
+        draggedPos: .constant(.zero)
     )
 }

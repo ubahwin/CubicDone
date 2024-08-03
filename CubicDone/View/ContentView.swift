@@ -8,14 +8,14 @@ struct ContentView: View {
                     Text("Plan")
                     Image(systemName: "calendar")
                 }
-
+            
             InboxView()
                 .tabItem {
                     Text("Inbox")
                     Image(systemName: "tray")
                 }
 
-            Test2View()
+            EmptyView()
                 .tabItem {
                     Text("Test")
                     Image(systemName: "testtube.2")

@@ -1,6 +1,15 @@
 {
-  "originHash" : "51f90653b2c9f9f7064c0d52159b40bf7d222e5f314be23e62fe28520fec03db",
+  "originHash" : "29aacd2d18dc83673aa80aa15a87c36a4c5ba0b24ad337e7eea73fb9da83ee59",
   "pins" : [
+    {
+      "identity" : "betterscrollviewswiftui",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/magickworx/BetterScrollViewSwiftUI",
+      "state" : {
+        "revision" : "ae66c1f02a8739a439d515932d489491ac46ac63",
+        "version" : "1.0.0"
+      }
+    },
     {
       "identity" : "swift-collections",
       "kind" : "remoteSourceControl",

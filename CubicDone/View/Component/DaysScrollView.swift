@@ -1,22 +1,26 @@
 import SwiftUI
 
 struct DaysScrollView<Content: View>: View {
+    private var queue = DispatchQueue.global(qos: .userInteractive)
+
     @State private var moveOffset: CGFloat = 0
     @State private var mainOffset: CGFloat = 0
     @State private var contentWidth: CGFloat = 0
 
     @Binding var goToMiddle: Bool
+    @Binding var draggedOffset: CGSize
+    private let load: (Direction) -> Void
 
     private let content: Content
-    private let load: (Direction) -> Void
-    private var queue = DispatchQueue.global(qos: .userInteractive)
 
     init(
         goToMiddle: Binding<Bool>,
+        draggedOffset: Binding<CGSize>,
         load: @escaping (Direction) -> Void,
         @ViewBuilder content: @escaping () -> Content
     ) {
         self._goToMiddle = goToMiddle
+        self._draggedOffset = draggedOffset
         self.load = load
         self.content = content()
     }
@@ -29,16 +33,18 @@ struct DaysScrollView<Content: View>: View {
 
             content
             // give width all ChildView
-                .background(GeometryReader { geometry in
-                    Color.clear
-                        .onAppear {
-                            contentWidth = geometry.size.width / 2
-                        }
-                        .onChange(of: geometry.size) {
-                            contentWidth = geometry.size.width / 2
-                        }
+                .background(GeometryReader { geometry in Color.clear
+                    .onAppear {
+                        contentWidth = geometry.size.width / 2
+                    }
+                    .onChange(of: geometry.size) {
+                        contentWidth = geometry.size.width / 2
+                    }
                 })
                 .offset(x: moveOffset)
+                .onChange(of: draggedOffset) {
+//                    print(draggedOffset)
+                }
                 .gesture(
                     DragGesture()
                         .onChanged { value in
@@ -83,6 +89,7 @@ struct DaysScrollView<Content: View>: View {
 #Preview {
     DaysScrollView(
         goToMiddle: .constant(false),
+        draggedOffset: .constant(.zero),
         load: { _ in
             sleep(2)
             print("sleep")
