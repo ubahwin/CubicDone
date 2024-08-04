@@ -86,6 +86,10 @@ struct DaysScrollView<Content: View>: View {
     }
 }
 
+enum Direction {
+    case start, end
+}
+
 #Preview {
     DaysScrollView(
         goToMiddle: .constant(false),
