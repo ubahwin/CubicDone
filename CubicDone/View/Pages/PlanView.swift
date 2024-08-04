@@ -8,11 +8,11 @@ struct PlanView: View {
     private var todayIndex: Int
 
     @State private var inboxTasks: [Task] = [
-        Task(title: "Покормить собаку"),
-        Task(title: "Сделать там чето работу"),
-        Task(title: "title3"),
-        Task(title: "title4"),
-        Task(title: "title5")
+        Task(title: "Покормить собаку", date: Date()),
+        Task(title: "Сделать там чето работу", date: Date()),
+        Task(title: "title3", date: Date()),
+        Task(title: "title4", date: Date()),
+        Task(title: "title5", date: Date())
     ]
 
     @State private var goToMiddle = false
@@ -40,10 +40,10 @@ struct PlanView: View {
         }
 
         // TODO: delete
-        daysArray[daysArray.count / 2].tasks.append(.init(title: "Ноготочки"))
-        daysArray[daysArray.count / 2].tasks.append(.init(title: "Погладить кошку"))
-        daysArray[daysArray.count / 2].tasks.append(.init(title: "title3"))
-        daysArray[daysArray.count / 2].tasks.append(.init(title: "title4"))
+        daysArray[daysArray.count / 2].tasks.append(.init(title: "Ноготочки", date: Date()))
+        daysArray[daysArray.count / 2].tasks.append(.init(title: "Погладить кошку", date: Date()))
+        daysArray[daysArray.count / 2].tasks.append(.init(title: "title3", date: Date()))
+        daysArray[daysArray.count / 2].tasks.append(.init(title: "title4", date: Date()))
 
         return daysArray
     }()
@@ -126,10 +126,6 @@ struct PlanView: View {
                     .padding(.horizontal)
 
                     Spacer()
-
-                    Button("add") {
-                        loadDays(to: .end)
-                    }
                 }
 
                 DaysScrollView(
@@ -213,8 +209,6 @@ struct PlanView: View {
     PlanView()
 }
 
-
-
 // -----------------------------
 // With BetterScrollView realize
 // -----------------------------
@@ -226,8 +220,6 @@ struct PlanView: View {
 
 // Так же при добавлении новых эл-ов в деку, скроллвью смещается, дергается.
 // Изменить offset вручную нельзя, приходится телепортироваться по .id()
-
-
 
 //                BetterScrollView(
 //                    axes: .horizontal,

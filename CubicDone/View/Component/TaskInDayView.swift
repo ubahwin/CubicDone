@@ -39,7 +39,7 @@ struct TaskInDayView: View {
             .fill(.gray)
             .ignoresSafeArea()
         TaskInDayView(
-            task: .constant(.init(title: "title"))
+            task: .constant(.init(title: "title", date: Date()))
         )
         .padding()
     }

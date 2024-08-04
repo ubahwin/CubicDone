@@ -8,7 +8,7 @@ struct ContentView: View {
                     Text("Plan")
                     Image(systemName: "calendar")
                 }
-            
+
             InboxView()
                 .tabItem {
                     Text("Inbox")

@@ -65,9 +65,9 @@ struct DayView: View {
     DayView(
         day: .constant(.init(
         date: Date(),
-        tasks: [.init(title: "title1"), .init(title: "title2")])
+        tasks: [.init(title: "title1", date: Date()), .init(title: "title2", date: Date())])
         ),
-        draggedTask: .constant(.init(title: "title")),
+        draggedTask: .constant(.init(title: "title", date: Date())),
         draggedOffset: .constant(.zero),
         draggedPos: .constant(.zero)
     )

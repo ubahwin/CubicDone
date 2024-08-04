@@ -1,6 +1,7 @@
 import SwiftUI
 
 // Explanation: spacing = nil
+// swiftlint:disable type_name
 struct V<Content: View>: View {
     private let align: HorizontalAlignment
     let content: Content
@@ -57,3 +58,4 @@ struct Z<Content: View>: View {
         ZStack(alignment: align) { content }
     }
 }
+// swiftlint:enable type_name

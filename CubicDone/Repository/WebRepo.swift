@@ -1,3 +1,4 @@
+import Foundation
 
 protocol WebRepo {
     func getAllTodo() -> Task
@@ -5,6 +6,6 @@ protocol WebRepo {
 
 class WepRepoStub: WebRepo {
     func getAllTodo() -> Task {
-        Task(title: "stub")
+        Task(title: "stub", date: Date())
     }
 }

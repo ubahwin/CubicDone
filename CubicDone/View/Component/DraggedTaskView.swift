@@ -21,5 +21,5 @@ struct DraggedTaskView: View {
 }
 
 #Preview {
-    DraggedTaskView(draggedTask: .init(title: "Покормить собаку"))
+    DraggedTaskView(draggedTask: .init(title: "Покормить собаку", date: Date()))
 }

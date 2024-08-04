@@ -18,6 +18,7 @@
 		B70DAC022C5D7D6E000CFB96 /* BetterScrollViewSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = B70DAC012C5D7D6E000CFB96 /* BetterScrollViewSwiftUI */; };
 		B70DAC042C5E50EA000CFB96 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70DAC032C5E50EA000CFB96 /* test.swift */; };
 		B75690B42C5EE20900843894 /* DraggedTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75690B32C5EE20900843894 /* DraggedTaskView.swift */; };
+		B75690B72C5F9ABD00843894 /* NewTaskSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75690B62C5F9ABD00843894 /* NewTaskSheetView.swift */; };
 		B7E655DB2C52701A00FF5449 /* CubicDoneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E655DA2C52701A00FF5449 /* CubicDoneApp.swift */; };
 		B7E655DD2C52701A00FF5449 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E655DC2C52701A00FF5449 /* ContentView.swift */; };
 		B7E655DF2C52701D00FF5449 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7E655DE2C52701D00FF5449 /* Assets.xcassets */; };
@@ -51,6 +52,7 @@
 		B70DABE82C5CC72E000CFB96 /* TaskInboxPlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskInboxPlanView.swift; sourceTree = "<group>"; };
 		B70DAC032C5E50EA000CFB96 /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 		B75690B32C5EE20900843894 /* DraggedTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggedTaskView.swift; sourceTree = "<group>"; };
+		B75690B62C5F9ABD00843894 /* NewTaskSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskSheetView.swift; sourceTree = "<group>"; };
 		B7E655D72C52701A00FF5449 /* CubicDone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CubicDone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7E655DA2C52701A00FF5449 /* CubicDoneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubicDoneApp.swift; sourceTree = "<group>"; };
 		B7E655DC2C52701A00FF5449 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				B70DABE02C5950BA000CFB96 /* TaskInDayView.swift */,
 				B70DABE82C5CC72E000CFB96 /* TaskInboxPlanView.swift */,
 				B75690B32C5EE20900843894 /* DraggedTaskView.swift */,
+				B75690B62C5F9ABD00843894 /* NewTaskSheetView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 				B7E655F02C5270ED00FF5449 /* APIClient.swift in Sources */,
 				B7E656092C5277A300FF5449 /* PlanView.swift in Sources */,
 				B70DABDB2C5900C8000CFB96 /* DayView.swift in Sources */,
+				B75690B72C5F9ABD00843894 /* NewTaskSheetView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

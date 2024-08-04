@@ -20,7 +20,7 @@ struct TaskInboxPlanView: View {
                 Spacer()
 
                 H {
-                    Text(Date().formatted(Date.FormatStyle.custom))
+                    Text(task.date.formatted(Date.FormatStyle.custom))
                         .foregroundStyle(.gray)
                         .padding(.horizontal, 10)
                         .padding(.bottom, 6)
@@ -36,6 +36,6 @@ struct TaskInboxPlanView: View {
 
 #Preview {
     TaskInboxPlanView(
-        task: .constant(.init(title: "Title"))
+        task: .constant(.init(title: "Title", date: Date()))
     )
 }
