@@ -8,11 +8,11 @@ struct PlanView: View {
     private var todayIndex: Int
 
     @State private var inboxTasks: [Task] = [
-        Task(title: "Покормить собаку", date: Date()),
-        Task(title: "Сделать там чето работу", date: Date()),
-        Task(title: "title3", date: Date()),
-        Task(title: "title4", date: Date()),
-        Task(title: "title5", date: Date())
+        Task(draftID: UUID(), title: "Покормить собаку", date: Date()),
+        Task(draftID: UUID(), title: "Сделать там чето работу", date: Date()),
+        ._stub,
+        ._stub,
+        ._stub
     ]
 
     @State private var goToMiddle = false
@@ -40,10 +40,8 @@ struct PlanView: View {
         }
 
         // TODO: delete
-        daysArray[daysArray.count / 2].tasks.append(.init(title: "Ноготочки", date: Date()))
-        daysArray[daysArray.count / 2].tasks.append(.init(title: "Погладить кошку", date: Date()))
-        daysArray[daysArray.count / 2].tasks.append(.init(title: "title3", date: Date()))
-        daysArray[daysArray.count / 2].tasks.append(.init(title: "title4", date: Date()))
+        daysArray[daysArray.count / 2].tasks.append(.init(draftID: UUID(), title: "Ноготочки", date: Date()))
+        daysArray[daysArray.count / 2].tasks.append(.init(draftID: UUID(), title: "Погладить кошку", date: Date()))
 
         return daysArray
     }()

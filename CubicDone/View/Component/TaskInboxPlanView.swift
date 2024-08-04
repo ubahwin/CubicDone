@@ -36,6 +36,6 @@ struct TaskInboxPlanView: View {
 
 #Preview {
     TaskInboxPlanView(
-        task: .constant(.init(title: "Title", date: Date()))
+        task: .constant(._stub)
     )
 }

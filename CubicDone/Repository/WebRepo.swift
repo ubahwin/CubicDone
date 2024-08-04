@@ -6,6 +6,6 @@ protocol WebRepo {
 
 class WepRepoStub: WebRepo {
     func getAllTodo() -> Task {
-        Task(title: "stub", date: Date())
+        ._stub
     }
 }

@@ -3,17 +3,18 @@ import Collections
 
 struct InboxView: View {
     @State private var inboxTasks: [Task] = [
-        .init(title: "title1", date: Date()),
-        .init(title: "title2", date: Date()),
-        .init(title: "title3", date: Date()),
-        .init(title: "title4", date: Date()),
-        .init(title: "title5", date: Date())
+        .init(draftID: UUID(), title: "oyausf asdfoagq qwe cshja", date: .now),
+        ._stub,
+        ._stub,
+        ._stub,
+        ._stub,
+        ._stub,
+        ._stub
     ]
 
     @State private var newTask = false
+    @State private var openProjects = false
     @State private var newTaskTitle = ""
-
-    @State private var selectedProject = "No project"
 
     var body: some View {
         NavigationStack {
@@ -34,19 +35,23 @@ struct InboxView: View {
                                         V {
                                             Rectangle()
                                                 .fill(.clear)
-                                                .frame(height: 43)
+                                                .frame(height: 60)
                                             Rectangle()
                                                 .fill(Color(hex: 0xF5F5F5))
                                                 .frame(height: 1)
                                         }
 
                                         H {
-                                            Text(task.title)
-                                                .foregroundStyle(Color(hex: 0x0F0F0F))
-                                                .padding(.horizontal)
-                                            Text(task.date, format: .dateTime)
-                                                .foregroundStyle(Color(hex: 0xC2C2C2))
-                                                .font(.callout)
+                                            V(.leading) {
+                                                Text(task.title)
+                                                    .foregroundStyle(Color(hex: 0x0F0F0F))
+                                                    .padding(.vertical, 6)
+                                                    .lineLimit(1)
+                                                Text(task.date, format: .dateTime)
+                                                    .foregroundStyle(Color(hex: 0xC2C2C2))
+                                                    .font(.footnote)
+                                            }
+                                            .padding(.horizontal)
 
                                             Spacer()
 
@@ -92,15 +97,15 @@ struct InboxView: View {
                 }
             }
             .navigationTitle("Inbox")
-            .navigationBarTitleDisplayMode(.inline)
         }
         .sheet(isPresented: $newTask) {
             NewTaskSheetView(
                 newTaskTitle: $newTaskTitle,
-                selectedProject: $selectedProject
+                openProjects: $openProjects
             )
-            .presentationDetents([.medium])
+            .presentationDetents([.height(openProjects ? 320 : 200)])
             .presentationCornerRadius(12)
+            .presentationDragIndicator(.visible)
         }
     }
 }
