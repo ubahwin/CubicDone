@@ -1,11 +1,54 @@
 import SwiftUI
 
 struct NewTaskSheetView: View {
+    @Environment(\.dismiss) var dismiss
+
     @Binding var newTaskTitle: String
-    @Binding var selectedProject: String
+    @Binding var openProjects: Bool
+    @State private var selectedProject: Project?
+
+    @State private var projects: [Project] = [
+        .init(name: "project1", color: .blue),
+        .init(name: "project2", color: .red),
+        .init(name: "project3", color: .green)
+    ]
 
     var body: some View {
         V {
+            if openProjects {
+                ScrollView {
+                    ForEach(projects) { project in
+                        Button {
+                            selectedProject = project
+
+                            withAnimation {
+                                openProjects = false
+                            }
+                        } label: {
+                            H {
+                                Circle()
+                                    .fill(project.color)
+                                    .frame(height: 16)
+                                    .padding(.horizontal)
+
+                                Text(project.name)
+                                    .foregroundStyle(.black)
+
+                                Spacer()
+
+                                if selectedProject?.id == project.id {
+                                    Image(systemName: "checkmark")
+                                        .padding(.horizontal)
+                                }
+                            }
+                        }
+                        .frame(height: 28)
+                    }
+                }
+                .padding(.top)
+                .frame(height: 120)
+            }
+
             TextField("Task point", text: $newTaskTitle)
                 .padding()
 
@@ -17,15 +60,17 @@ struct NewTaskSheetView: View {
 
             H {
                 Button {
-
+                    withAnimation {
+                        openProjects.toggle()
+                    }
                 } label: {
-                    Text(selectedProject)
+                    Text(selectedProject?.title ?? "No Project")
                         .foregroundStyle(.black)
                         .padding(.vertical, 2)
                         .padding(.horizontal)
                         .background {
                             Rectangle()
-                                .fill(Color(hex: 0xEDEDED))
+                                .fill(selectedProject == nil ? Color(hex: 0xEDEDED) : selectedProject!.color)
                                 .clipShape(.rect(cornerRadius: 4))
                         }
                         .padding(.horizontal)
@@ -34,7 +79,8 @@ struct NewTaskSheetView: View {
                 Spacer()
 
                 Button {
-
+                    dismiss()
+                    openProjects = false
                 } label: {
                     Z {
                         Rectangle()
@@ -55,7 +101,7 @@ struct NewTaskSheetView: View {
 #Preview {
     NewTaskSheetView(
         newTaskTitle: .constant("title"),
-        selectedProject: .constant("No project")
+        openProjects: .constant(true)
     )
     .frame(height: 120)
 }
