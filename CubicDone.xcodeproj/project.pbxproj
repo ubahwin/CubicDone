@@ -13,12 +13,12 @@
 		B70DABDD2C5900F9000CFB96 /* DaysScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70DABDC2C5900F9000CFB96 /* DaysScrollView.swift */; };
 		B70DABE12C5950BA000CFB96 /* TaskInDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70DABE02C5950BA000CFB96 /* TaskInDayView.swift */; };
 		B70DABE32C5959E9000CFB96 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70DABE22C5959E9000CFB96 /* Date.swift */; };
-		B70DABE52C5C1927000CFB96 /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70DABE42C5C1927000CFB96 /* Direction.swift */; };
 		B70DABE92C5CC72E000CFB96 /* TaskInboxPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70DABE82C5CC72E000CFB96 /* TaskInboxPlanView.swift */; };
-		B70DAC022C5D7D6E000CFB96 /* BetterScrollViewSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = B70DAC012C5D7D6E000CFB96 /* BetterScrollViewSwiftUI */; };
-		B70DAC042C5E50EA000CFB96 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70DAC032C5E50EA000CFB96 /* test.swift */; };
 		B75690B42C5EE20900843894 /* DraggedTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75690B32C5EE20900843894 /* DraggedTaskView.swift */; };
 		B75690B72C5F9ABD00843894 /* NewTaskSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75690B62C5F9ABD00843894 /* NewTaskSheetView.swift */; };
+		B75690B92C60019500843894 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75690B82C60019500843894 /* Project.swift */; };
+		B75690BB2C6004B900843894 /* Stubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75690BA2C6004B900843894 /* Stubs.swift */; };
+		B75690BD2C60066A00843894 /* ProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75690BC2C60066A00843894 /* ProjectsView.swift */; };
 		B7E655DB2C52701A00FF5449 /* CubicDoneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E655DA2C52701A00FF5449 /* CubicDoneApp.swift */; };
 		B7E655DD2C52701A00FF5449 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E655DC2C52701A00FF5449 /* ContentView.swift */; };
 		B7E655DF2C52701D00FF5449 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7E655DE2C52701D00FF5449 /* Assets.xcassets */; };
@@ -48,11 +48,12 @@
 		B70DABDC2C5900F9000CFB96 /* DaysScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysScrollView.swift; sourceTree = "<group>"; };
 		B70DABE02C5950BA000CFB96 /* TaskInDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskInDayView.swift; sourceTree = "<group>"; };
 		B70DABE22C5959E9000CFB96 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
-		B70DABE42C5C1927000CFB96 /* Direction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Direction.swift; sourceTree = "<group>"; };
 		B70DABE82C5CC72E000CFB96 /* TaskInboxPlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskInboxPlanView.swift; sourceTree = "<group>"; };
-		B70DAC032C5E50EA000CFB96 /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 		B75690B32C5EE20900843894 /* DraggedTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggedTaskView.swift; sourceTree = "<group>"; };
 		B75690B62C5F9ABD00843894 /* NewTaskSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskSheetView.swift; sourceTree = "<group>"; };
+		B75690B82C60019500843894 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		B75690BA2C6004B900843894 /* Stubs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stubs.swift; sourceTree = "<group>"; };
+		B75690BC2C60066A00843894 /* ProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsView.swift; sourceTree = "<group>"; };
 		B7E655D72C52701A00FF5449 /* CubicDone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CubicDone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7E655DA2C52701A00FF5449 /* CubicDoneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubicDoneApp.swift; sourceTree = "<group>"; };
 		B7E655DC2C52701A00FF5449 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -79,7 +80,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B70DAC022C5D7D6E000CFB96 /* BetterScrollViewSwiftUI in Frameworks */,
 				B7E6560E2C527CA500FF5449 /* Collections in Frameworks */,
 				B7E656102C527CA500FF5449 /* DequeModule in Frameworks */,
 			);
@@ -114,7 +114,7 @@
 			children = (
 				B7E6560A2C52782700FF5449 /* InboxView.swift */,
 				B7E656082C5277A300FF5449 /* PlanView.swift */,
-				B70DAC032C5E50EA000CFB96 /* test.swift */,
+				B75690BC2C60066A00843894 /* ProjectsView.swift */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -205,6 +205,7 @@
 				B7E655FB2C5272DF00FF5449 /* CancelBag.swift */,
 				B7E655FC2C5272DF00FF5449 /* Color.swift */,
 				B7E655FA2C5272DF00FF5449 /* Log.swift */,
+				B75690BA2C6004B900843894 /* Stubs.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -223,7 +224,7 @@
 			children = (
 				B7E656062C52744100FF5449 /* Task.swift */,
 				B70DABD32C58D399000CFB96 /* Day.swift */,
-				B70DABE42C5C1927000CFB96 /* Direction.swift */,
+				B75690B82C60019500843894 /* Project.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -248,7 +249,6 @@
 			packageProductDependencies = (
 				B7E6560D2C527CA500FF5449 /* Collections */,
 				B7E6560F2C527CA500FF5449 /* DequeModule */,
-				B70DAC012C5D7D6E000CFB96 /* BetterScrollViewSwiftUI */,
 			);
 			productName = CubicDone;
 			productReference = B7E655D72C52701A00FF5449 /* CubicDone.app */;
@@ -280,7 +280,6 @@
 			mainGroup = B7E655CE2C52701A00FF5449;
 			packageReferences = (
 				B7E6560C2C527C7B00FF5449 /* XCRemoteSwiftPackageReference "swift-collections" */,
-				B70DAC002C5D7D6E000CFB96 /* XCRemoteSwiftPackageReference "BetterScrollViewSwiftUI" */,
 			);
 			productRefGroup = B7E655D82C52701A00FF5449 /* Products */;
 			projectDirPath = "";
@@ -347,10 +346,11 @@
 				B7E655FE2C5272DF00FF5449 /* CancelBag.swift in Sources */,
 				B70DABD42C58D399000CFB96 /* Day.swift in Sources */,
 				B7E655DB2C52701A00FF5449 /* CubicDoneApp.swift in Sources */,
+				B75690BD2C60066A00843894 /* ProjectsView.swift in Sources */,
 				B70DABDD2C5900F9000CFB96 /* DaysScrollView.swift in Sources */,
-				B70DAC042C5E50EA000CFB96 /* test.swift in Sources */,
+				B75690B92C60019500843894 /* Project.swift in Sources */,
+				B75690BB2C6004B900843894 /* Stubs.swift in Sources */,
 				B7E655F62C52724400FF5449 /* AllTodoResponse.swift in Sources */,
-				B70DABE52C5C1927000CFB96 /* Direction.swift in Sources */,
 				B7E656042C52732500FF5449 /* LocalRepo.swift in Sources */,
 				B7E655F02C5270ED00FF5449 /* APIClient.swift in Sources */,
 				B7E656092C5277A300FF5449 /* PlanView.swift in Sources */,
@@ -569,14 +569,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		B70DAC002C5D7D6E000CFB96 /* XCRemoteSwiftPackageReference "BetterScrollViewSwiftUI" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/magickworx/BetterScrollViewSwiftUI";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
 		B7E6560C2C527C7B00FF5449 /* XCRemoteSwiftPackageReference "swift-collections" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apple/swift-collections.git";
@@ -588,11 +580,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		B70DAC012C5D7D6E000CFB96 /* BetterScrollViewSwiftUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B70DAC002C5D7D6E000CFB96 /* XCRemoteSwiftPackageReference "BetterScrollViewSwiftUI" */;
-			productName = BetterScrollViewSwiftUI;
-		};
 		B7E6560D2C527CA500FF5449 /* Collections */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B7E6560C2C527C7B00FF5449 /* XCRemoteSwiftPackageReference "swift-collections" */;
