@@ -15,10 +15,10 @@ struct ContentView: View {
                     Image(systemName: "tray")
                 }
 
-            EmptyView()
+            ProjectsView()
                 .tabItem {
-                    Text("Test")
-                    Image(systemName: "testtube.2")
+                    Text("Projects")
+                    Image(systemName: "folder")
                 }
         }
         .tint(.black)
